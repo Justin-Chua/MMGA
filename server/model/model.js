@@ -28,9 +28,13 @@ const connectToDatabase = new Promise((resolve, reject) => {
           //user: "root", //uncomment this if using docker
           //password: "password" //uncomment this if using docker
 
-          host: "localhost", //uncomment this if using XAMPP
-          user: "root", //uncomment this if using XAMPP
-          password: "" //uncomment this if using XAMPP
+          // host: "localhost", //uncomment this if using XAMPP
+          // user: "root", //uncomment this if using XAMPP
+          // password: "" //uncomment this if using XAMPP
+
+          host: dbHost,
+          user: dbUser,
+          password: dbPassword
       });
 
       console.log(`Connected!`);
