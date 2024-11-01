@@ -23,7 +23,7 @@
 
     const userData = ref([]);
     const fetchUserInfo = async () => {
-        const response = await fetch('http://localhost:8080/viewProfile/', {
+        const response = await fetch('mmga-production.up.railway.app/viewProfile/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -38,7 +38,7 @@
 
     const topGames = ref([]);
     const fetchTopGames = async() => {
-        const response = await fetch('http://localhost:8080/user/topGames?username='+profileUsername.value);
+        const response = await fetch('mmga-production.up.railway.app/user/topGames?username='+profileUsername.value);
         topGames.value = await response.json();
     }
 

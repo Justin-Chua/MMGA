@@ -20,7 +20,7 @@
             bio: userbio.value
         };
 
-        const response = await fetch('http://localhost:8080/editProfile', {
+        const response = await fetch('mmga-production.up.railway.app/editProfile', {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json'
