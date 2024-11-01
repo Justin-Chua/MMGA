@@ -15,7 +15,7 @@ INSERT IGNORE INTO `users` (`id`, `role`, `username`, `password`, `bio`) VALUES 
 INSERT IGNORE INTO `developer` (`developer_id`) VALUES ('3');
 INSERT IGNORE INTO `developer` (`developer_id`) VALUES ('4');
 INSERT IGNORE INTO `developer` (`developer_id`) VALUES ('7');
-INSERT IGNORE INTO `developer` (`developer_id`) VALUES ('9');
+INSERT IGNORE INTO `developer` (`developer_id`) VALUES ('10');
 
 -- Friends Seeding
 INSERT IGNORE INTO `friends` (`user1_id`, `user2_id`) VALUES ('1', '2');
@@ -50,11 +50,11 @@ VALUES (NULL, 'Escape The Jungle', 'Be the first out of the jungle, but be sure 
 
 INSERT IGNORE INTO `game` (`id`, `name`, `description`, `genre`, `appstoreprice`, `playstoreprice`, `publisher`, `author_id`) 
 VALUES (NULL, 'Heisty Heist', 'Attempt to make as much money as possible before being caught by the cops.', 
-'Action', NULL, NULL, 'BadGuyGames', '3');
+'Action', NULL, NULL, 'BadGuyGames', '10');
 
 INSERT IGNORE INTO `game` (`id`, `name`, `description`, `genre`, `appstoreprice`, `playstoreprice`, `publisher`, `author_id`) 
 VALUES (NULL, 'Rancher Pros 2', 'Run a popular ranch in this relaxing look into another way of life.', 
-'Farming', '0.99', '0.99', NULL, '9');
+'Farming', '0.99', '0.99', NULL, '10');
 
 -- Discussion Seeding
 INSERT IGNORE INTO `discussion` (`discussion_id`, `title`, `description`, `poster_id`, `game_id`, `post_date`) 

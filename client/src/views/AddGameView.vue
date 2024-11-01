@@ -35,7 +35,7 @@
         const imageFile = document.querySelector('input[type="file"]');
 
         if (!title || !description || !link || !googlePrice || !appStorePrice || !imageFile || !genre || genre=="GENRE") {
-            alert("All values must be sumitted");
+            alert("All values must be submitted");
             return;
         }
 
