@@ -20,7 +20,7 @@
     };
 
     const fetchGame = async () => {
-        const response = await fetch('mmga-production.up.railway.app/game/getGameById?id='+route.params.gameid);
+        const response = await fetch('https://mmga-production.up.railway.app/game/getGameById?id='+route.params.gameid);
         const games = await response.json();
         game.value = games[0];
     };
@@ -49,7 +49,7 @@
         discussionData.append('game', game.value.id);
         discussionData.append('date', postDate);
 
-        const response = await fetch(`mmga-production.up.railway.app/discussion/postDiscussion`, {
+        const response = await fetch(`https://mmga-production.up.railway.app/discussion/postDiscussion`, {
             method: 'POST',
             body: discussionData
         });

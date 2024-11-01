@@ -25,7 +25,7 @@
                     password : this.password,
                     role: this.userDev
                 }
-                let route = "mmga-production.up.railway.app/user/createAccount";
+                let route = "https://mmga-production.up.railway.app/user/createAccount";
                 const response = await fetch(route, {method: "POST",headers: {"Access-Control-Allow-Origin" : "*",
                                                         "Access-Control-Allow-Methods" : "POST",
                                                         "Content-Type" : "application/json"}, body: JSON.stringify(body)});

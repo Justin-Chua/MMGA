@@ -16,19 +16,19 @@
     let loggedInId = ref(sessionStorage.getItem('loggedInId'));
 
     const fetchGame = async () => {
-        const response = await fetch('mmga-production.up.railway.app/game/getGameById?id='+route.params.gameid);
+        const response = await fetch('https://mmga-production.up.railway.app/game/getGameById?id='+route.params.gameid);
         const games = await response.json();
         game.value = games[0];
         game.value.discussions = await fetchDiscussion(game.value.id);
     };
 
     const fetchDiscussion = async (id) => {
-        const response = await fetch('mmga-production.up.railway.app/discussion/getDiscussionsByGame?id='+id);
+        const response = await fetch('https://mmga-production.up.railway.app/discussion/getDiscussionsByGame?id='+id);
         return await response.json();
     }
 
     const fetchLikedDiscussions = async() => {
-        const response = await fetch('mmga-production.up.railway.app/discussion/likedDiscussionsByUserID?userid=' + loggedInId.value);
+        const response = await fetch('https://mmga-production.up.railway.app/discussion/likedDiscussionsByUserID?userid=' + loggedInId.value);
         const data = await response.json();
         likedDiscussions.value = await data;
     }
@@ -65,7 +65,7 @@
       if (button.classList.contains("unliked-button")) {
         button.classList.remove("like-animation");
         // if button is now unliked, remove from likes
-        const response = await fetch("mmga-production.up.railway.app/discussion/removeLikedDiscussion?userid=" + loggedInId.value 
+        const response = await fetch("https://mmga-production.up.railway.app/discussion/removeLikedDiscussion?userid=" + loggedInId.value 
         +"&discussionid=" + discussion_id, { method: "POST" });
         if (response.status != 200) {
           alert("Liked discussion was not removed successfully.");
@@ -74,7 +74,7 @@
         // trigger like animation
         button.classList.add("like-animation");
         // if button is now liked, add to likes
-        const response = await fetch("mmga-production.up.railway.app/discussion/addLikedDiscussion?userid=" + loggedInId.value 
+        const response = await fetch("https://mmga-production.up.railway.app/discussion/addLikedDiscussion?userid=" + loggedInId.value 
         +"&discussionid=" + discussion_id, { method: "POST" });
         if (response.status != 200) {
           alert("Liked discussion was not added successfully.");

@@ -30,7 +30,7 @@ import router from "@/router";
             }
         },
         mounted(){
-                let route = "mmga-production.up.railway.app/game/getAllGames";
+                let route = "https://mmga-production.up.railway.app/game/getAllGames";
                 fetch(route, {method: "GET"})
                 .then(res => res.json())
                 .then(data => this.games = data)

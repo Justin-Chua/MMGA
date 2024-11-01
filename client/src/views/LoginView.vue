@@ -7,7 +7,7 @@ import router from "../router/index.js";
         methods: {
             async handleLogin() {
                 console.log('Button clicked!');
-                const route = "mmga-production.up.railway.app/user/getAccount?username=" +
+                const route = "https://mmga-production.up.railway.app/user/getAccount?username=" +
                 this.username +
                 "&password=" +
                 this.password;
