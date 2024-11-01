@@ -123,7 +123,7 @@
             </div>
             <router-link id="routerLink" :to="'/game/' + trendingGame.id">
               <div id="trendingContentDiv">
-                <img :src="'http://localhost:8080' + trendingGame.thumbnail" alt="Image Unavailable"/>
+                <img :src="'https://mmga-production.up.railway.app/' + trendingGame.thumbnail" alt="Image Unavailable"/>
                 <div id="gameDescDiv">
                   <h3 v-text="trendingGame.name"></h3>
                   <p id="publisher" v-text="trendingGame.publisher"></p>

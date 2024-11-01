@@ -111,7 +111,7 @@
     <div class="discussion-body-container">
         <div v-for="game in fetchedGames" :key="game.id" class="discussion-card">
             <div class="discussion-game-section">
-                <img :src="'http://localhost:8080' + game.thumbnail" alt="Image Unavailable"/>
+                <img :src="'https://mmga-production.up.railway.app/' + game.thumbnail" alt="Image Unavailable"/>
                 <h1 v-text="game.name"></h1>
             </div>
             <div class="discussion-list-section">

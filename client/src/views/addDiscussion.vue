@@ -89,7 +89,7 @@
             <span>
                 <div id="gameDiv">
                     <h1 v-text="'Posting in '+game.name"></h1>
-                    <img :src="'http://localhost:8080' + game.thumbnail" alt="Image Unavailable"/>
+                    <img :src="'https://mmga-production.up.railway.app/' + game.thumbnail" alt="Image Unavailable"/>
                 </div>
                 <div id="discussionContent">
                     <form>

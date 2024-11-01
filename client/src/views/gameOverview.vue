@@ -141,7 +141,7 @@ import router from "@/router";
     <div class="body-container">
         <div class="game-overview">
             <div id="cover-image">
-                <img :src="'http://localhost:8080' + game.thumbnail" alt="Image Unavailable"/>
+                <img :src="'https://mmga-production.up.railway.app/' + game.thumbnail" alt="Image Unavailable"/>
             </div>
             <div id="game-information">
                 <div id="game-details">

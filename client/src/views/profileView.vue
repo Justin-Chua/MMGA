@@ -107,7 +107,7 @@
             <ul>
                 <li v-for="game in topGames" :key="game.id">
                     <div class="topGamesImage">
-                        <img :src="'http://localhost:8080' + game.thumbnail" alt="Image Unavailable" id ="marioIcon">
+                        <img :src="'https://mmga-production.up.railway.app/' + game.thumbnail" alt="Image Unavailable" id ="marioIcon">
                     </div>
                     <div class="topGamesImageTitle">
                         <h3 v-text="game.name"></h3>
