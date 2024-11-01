@@ -12,7 +12,7 @@ var storageDef = multer.diskStorage({
 });
 
 const upload = multer({storage: storageDef,});
-let defaultImage = '/uploads/defaultImage.svg';
+let defaultImage = 'uploads/defaultImage.svg';
 
 module.exports = function(databaseConnection) {
     const router = express.Router();
@@ -98,7 +98,7 @@ module.exports = function(databaseConnection) {
     
     router.post('/uploadGame', upload.single('imageFile'), (req, res) => {
         const { title, description, link, googlePrice, appStorePrice, genre, publisher} = req.body;
-        let thumbnail = '/uploads/'+req.file.filename;
+        let thumbnail = 'uploads/'+req.file.filename;
     
         databaseConnection.query('SELECT developer_id FROM developer WHERE developer_id IN (SELECT id FROM users WHERE username = ?)', [publisher], (err, results) => {
             if (err){
