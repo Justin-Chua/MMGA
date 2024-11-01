@@ -6,6 +6,7 @@ const { promisify } = require('util');
 
 // envrionmentVariables
 require('dotenv').config();
+const dbName = process.env.DB_NAME;
 const dbHost = process.env.DB_HOST;
 const dbUser = process.env.DB_USER;
 const dbPassword = process.env.DB_PASSWORD;
@@ -34,29 +35,11 @@ const connectToDatabase = new Promise((resolve, reject) => {
 
           host: dbHost,
           user: dbUser,
-          password: dbPassword
+          password: dbPassword,
+          database: dbName
       });
 
       console.log(`Connected!`);
-
-      //creates the database if it does not exist already
-      databaseConnection.query("CREATE DATABASE IF NOT EXISTS mmgadb", (err, results) => {
-        if (err) {
-            console.error('Error creating database:', err);
-            reject(err);
-            return;
-        }
-        console.log('Database "mmgadb" created');
-      });
-
-      databaseConnection.query("USE mmgadb", (err, results) => {
-        if (err) {
-          console.error('Error executing query:', err);
-          reject(err);
-          return;
-        }
-        console.log('"Use mmgadb" executed successfully');
-      });
 
       const executeSqlFile = (filePath, connection) => {
         fs.readFile(filePath, 'utf8', (err, data) => {
